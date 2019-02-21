@@ -1,0 +1,35 @@
+
+server:
+  port: 4399
+  servlet:
+    context-path: /qqq
+#    支持热部署
+    jsp:
+      init-parameters:
+        developments: true
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test
+#    username: test
+#    password: 123
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: BUDDHIST
+    password: 123
+#    配置视图解析器
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/mapper/*.xml
